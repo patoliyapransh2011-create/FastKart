@@ -1,0 +1,141 @@
+
+.settings-page {
+  min-height: 100vh;
+  padding: 48px 20px;
+  background: #f5f8ff;
+}
+
+.settings-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.settings-back {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.settings-back:hover {
+  text-decoration: underline;
+}
+
+.settings-card {
+  margin-top: 28px;
+  padding: 36px;
+  background: #fff;
+  border: 1px solid #e5eaf5;
+  border-radius: 22px;
+  box-shadow: 0 12px 35px rgba(30, 64, 175, 0.07);
+}
+
+.settings-title {
+  color: #172033;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.settings-description {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.settings-options {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.settings-option-title {
+  display: block;
+  color: #172033;
+  font-weight: 700;
+}
+
+.settings-option-description {
+  display: block;
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.settings-divider {
+  height: 1px;
+  border: 0;
+  background: #e8edf5;
+}
+
+.settings-checkbox {
+  width: 21px;
+  height: 21px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.settings-language-label {
+  display: block;
+  margin-bottom: 10px;
+  color: #172033;
+  font-weight: 700;
+}
+
+.settings-select {
+  width: 100%;
+  padding: 13px 15px;
+  color: #172033;
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  border-radius: 10px;
+  outline: none;
+}
+
+.settings-select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.settings-save-btn {
+  width: 100%;
+  padding: 14px;
+  color: #fff;
+  background: #2563eb;
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.settings-save-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.settings-success {
+  color: #16a34a;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .settings-page {
+    padding: 30px 15px;
+  }
+
+  .settings-card {
+    padding: 24px 18px;
+  }
+
+  .settings-title {
+    font-size: 27px;
+  }
+}

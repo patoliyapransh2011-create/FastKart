@@ -1,0 +1,268 @@
+
+.customers-page {
+  width: 100%;
+  color: #172033;
+}
+
+.customers-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.customers-eyebrow {
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.customers-heading h1 {
+  margin: 8px 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #172033;
+}
+
+.customers-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.customers-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.customers-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #e8edf5;
+  border-radius: 15px;
+  padding: 22px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.customers-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.customers-stat-icon.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.customers-stat-icon.green {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.customers-stat-icon.purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.customers-stat-card span {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.customers-stat-card h2 {
+  margin: 6px 0 0;
+  color: #172033;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.customers-table-card {
+  background: #fff;
+  border: 1px solid #e8edf5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.customers-table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.customers-table-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.customers-table-heading p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.customers-table-heading input {
+  width: 290px;
+  max-width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  outline: none;
+  font-size: 13px;
+  background: #fff;
+}
+
+.customers-table-heading input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.customers-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.customers-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.customers-table th {
+  padding: 15px 18px;
+  background: #f8fafc;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.customers-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #f0f2f6;
+  color: #475569;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.customers-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.customers-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+.customer-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.customer-name-cell strong {
+  color: #172033;
+  font-weight: 700;
+}
+
+.customer-avatar {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.customer-order-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 800;
+}
+
+.customer-spent {
+  color: #059669 !important;
+  font-weight: 800;
+}
+
+.customers-empty {
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.customers-empty span {
+  font-size: 35px;
+  color: #94a3b8;
+}
+
+.customers-empty h3 {
+  margin: 12px 0 6px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.customers-empty p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .customers-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .customers-heading h1 {
+    font-size: 25px;
+  }
+
+  .customers-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .customers-stat-card {
+    padding: 17px;
+  }
+
+  .customers-table-heading {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 17px;
+  }
+
+  .customers-table-heading input {
+    width: 100%;
+  }
+}

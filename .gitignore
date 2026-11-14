@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+out/
+build/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

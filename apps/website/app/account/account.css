@@ -1,0 +1,138 @@
+
+/* =================================
+   FASTKART - ACCOUNT PAGE
+================================= */
+
+.account-page {
+  min-height: 100vh;
+  padding: 65px 20px;
+  background: #f8faff;
+  color: #172033;
+}
+
+.account-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.account-back {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-bottom: 25px;
+}
+
+.account-back:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.account-card {
+  background: #ffffff;
+  border: 1px solid #e5eaf2;
+  border-radius: 20px;
+  padding: 42px;
+  box-shadow: 0 12px 35px #1720330a;
+}
+
+.account-card h1 {
+  color: #172033;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin: 0 0 10px;
+}
+
+.account-description {
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.account-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.account-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.account-field input {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 15px;
+  border: 1px solid #dbe2ee;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #172033;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.account-field input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px #2563eb18;
+}
+
+.account-field input::placeholder {
+  color: #94a3b8;
+}
+
+.account-save-btn {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.account-save-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #2563eb30;
+}
+
+.account-success {
+  padding: 13px;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #15803d;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .account-page {
+    padding: 35px 14px;
+  }
+
+  .account-card {
+    padding: 25px 19px;
+    border-radius: 15px;
+  }
+
+  .account-card h1 {
+    font-size: 28px;
+  }
+}
