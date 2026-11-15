@@ -1,5 +1,7 @@
+import { Suspense } from "react";
+import DemoPaymentClient from "./DemoPaymentClient";
 
-import DemoPaymentClient from "../DemoPaymentClient";
+export const dynamic = "force-dynamic";
 
 export default async function DemoPaymentPage({
   params,
@@ -8,5 +10,9 @@ export default async function DemoPaymentPage({
 }) {
   const { id } = await params;
 
-  return <DemoPaymentClient id={id} />;
+  return (
+    <Suspense fallback={<p>Loading demo payment...</p>}>
+      <DemoPaymentClient id={id} />
+    </Suspense>
+  );
 }
