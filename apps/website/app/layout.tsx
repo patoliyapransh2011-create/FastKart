@@ -14,6 +14,9 @@ import "./admin/orders/orders.css";
 import "./admin/customers/customers.css";
 import "./admin/categories/categories.css";
 import "./admin/products/products.css";
+import "./admin/inventory/inventory.css";
+import "./admin/coupons/coupons.css";
+import "./admin/payments/payments.css";
 
 import { CartProvider } from "./cart-context";
 import { WishlistProvider } from "./wishlist-context";

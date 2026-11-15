@@ -17,6 +17,8 @@ type Order = {
   total: number;
   subtotal?: number;
   delivery?: number;
+  couponCode?: string;
+  discount?: number;
   paymentMethod?: string;
   paymentStatus?: string;
   orderStatus: string;
@@ -143,6 +145,27 @@ export default function OrderSuccessPage() {
             </div>
           )}
 
+          {order.couponCode && (
+            <div className="order-success-row">
+              <span className="order-success-label">Coupon Applied</span>
+              <strong className="order-success-value">
+                {order.couponCode}
+              </strong>
+            </div>
+          )}
+
+          {typeof order.discount === "number" && order.discount > 0 && (
+            <div className="order-success-row">
+              <span className="order-success-label">Coupon Discount</span>
+              <strong
+                className="order-success-value"
+                style={{ color: "#15803d" }}
+              >
+                -{money(order.discount)}
+              </strong>
+            </div>
+          )}
+
           {typeof order.delivery === "number" && (
             <div className="order-success-row">
               <span className="order-success-label">Delivery Charge</span>
@@ -173,3 +196,4 @@ export default function OrderSuccessPage() {
     </main>
   );
 }
+

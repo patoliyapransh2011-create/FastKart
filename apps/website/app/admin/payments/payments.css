@@ -1,0 +1,249 @@
+
+.payments-page {
+  padding: 28px;
+  color: #172033;
+}
+
+.payments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.payments-header h1 {
+  font-size: 27px;
+  font-weight: 800;
+  margin: 0 0 7px;
+}
+
+.payments-header p,
+.payments-table-heading p {
+  color: #7b8495;
+  font-size: 14px;
+  margin: 0;
+}
+
+.payments-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.payments-stat-card {
+  background: #fff;
+  border: 1px solid #e8edf5;
+  border-radius: 13px;
+  padding: 20px;
+  box-shadow: 0 3px 12px rgba(20, 40, 80, 0.04);
+}
+
+.payments-stat-card span {
+  color: #687386;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.payments-stat-card h2 {
+  font-size: 27px;
+  font-weight: 800;
+  margin: 12px 0 5px;
+  color: #172033;
+}
+
+.payments-stat-card small {
+  color: #929bad;
+  font-size: 12px;
+}
+
+.payments-table-card {
+  background: #fff;
+  border: 1px solid #e8edf5;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(20, 40, 80, 0.04);
+}
+
+.payments-table-heading {
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.payments-table-heading h2 {
+  font-size: 19px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.payments-count {
+  background: #eff6ff;
+  color: #2563eb;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.payments-filters {
+  display: flex;
+  gap: 12px;
+  padding: 0 22px 20px;
+}
+
+.payments-filters input,
+.payments-filters select {
+  height: 42px;
+  border: 1px solid #dfe5ef;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: #fff;
+  color: #263247;
+  outline: none;
+  font-size: 13px;
+}
+
+.payments-filters input {
+  flex: 1;
+  min-width: 180px;
+}
+
+.payments-filters input:focus,
+.payments-filters select:focus {
+  border-color: #2563eb;
+}
+
+.payments-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.payments-table th {
+  background: #f7f9fc;
+  color: #69758a;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: left;
+  padding: 15px 18px;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.payments-table td {
+  padding: 16px 18px;
+  border-bottom: 1px solid #edf0f5;
+  font-size: 13px;
+  color: #465268;
+}
+
+.payments-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.payments-order-id {
+  color: #2563eb !important;
+  font-weight: 800;
+}
+
+.payments-email,
+.payments-original-status {
+  display: block;
+  color: #929bad;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.payments-method {
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 6px;
+  padding: 6px 9px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.payments-amount {
+  font-weight: 800;
+  color: #172033 !important;
+}
+
+.payments-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.payments-status.paid {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.payments-status.pending {
+  background: #fef3c7;
+  color: #a16207;
+}
+
+.payments-status.failed {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.payments-empty {
+  text-align: center !important;
+  padding: 40px !important;
+  color: #929bad !important;
+}
+
+@media (max-width: 1100px) {
+  .payments-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .payments-page {
+    padding: 16px;
+  }
+
+  .payments-header h1 {
+    font-size: 22px;
+  }
+
+  .payments-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .payments-stat-card {
+    padding: 15px;
+  }
+
+  .payments-stat-card h2 {
+    font-size: 23px;
+  }
+
+  .payments-filters {
+    flex-direction: column;
+    padding: 0 15px 18px;
+  }
+
+  .payments-filters input,
+  .payments-filters select {
+    width: 100%;
+  }
+
+  .payments-table-heading {
+    padding: 17px 15px;
+  }
+}

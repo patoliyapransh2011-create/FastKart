@@ -7,6 +7,10 @@ type Order = {
   orderId: string;
   orderDate?: string;
   total: number;
+  subtotal?: number;
+  delivery?: number;
+  couponCode?: string;
+  discount?: number;
   orderStatus?: string;
   deliveryStatus?: string;
   paymentMethod?: string;
@@ -62,7 +66,8 @@ export default function AdminOrdersPage() {
       const matchesSearch =
         (order.orderId || "").toLowerCase().includes(searchText) ||
         (order.customer?.name || "").toLowerCase().includes(searchText) ||
-        (order.customer?.phone || "").includes(searchText);
+        (order.customer?.phone || "").includes(searchText) ||
+        (order.couponCode || "").toLowerCase().includes(searchText);
 
       const status = (order.orderStatus || "Pending").toLowerCase();
 
@@ -76,6 +81,11 @@ export default function AdminOrdersPage() {
 
   const totalRevenue = activeOrders.reduce(
     (sum, order) => sum + (Number(order.total) || 0),
+    0
+  );
+
+  const totalDiscount = activeOrders.reduce(
+    (sum, order) => sum + (Number(order.discount) || 0),
     0
   );
 
@@ -112,14 +122,8 @@ export default function AdminOrdersPage() {
         </div>
 
         <div className="orders-stat-card">
-          <span>Processing Orders</span>
-          <strong>
-            {loaded
-              ? activeOrders.filter(
-                  (o) => o.deliveryStatus?.toLowerCase() === "processing"
-                ).length
-              : "—"}
-          </strong>
+          <span>Total Coupon Discount</span>
+          <strong>{loaded ? money(totalDiscount) : "—"}</strong>
         </div>
       </div>
 
@@ -134,7 +138,7 @@ export default function AdminOrdersPage() {
         <div className="orders-toolbar">
           <input
             type="text"
-            placeholder="Search order ID, customer or phone..."
+            placeholder="Search order ID, customer, phone or coupon..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
@@ -160,7 +164,9 @@ export default function AdminOrdersPage() {
                 <th>Phone</th>
                 <th>City</th>
                 <th>Order Date</th>
-                <th>Amount</th>
+                <th>Coupon Code</th>
+                <th>Discount</th>
+                <th>Final Amount</th>
                 <th>Payment</th>
                 <th>Order Status</th>
                 <th>Delivery Status</th>
@@ -170,11 +176,11 @@ export default function AdminOrdersPage() {
             <tbody>
               {!loaded ? (
                 <tr>
-                  <td colSpan={9}>Loading orders...</td>
+                  <td colSpan={11}>Loading orders...</td>
                 </tr>
               ) : filteredOrders.length === 0 ? (
                 <tr>
-                  <td colSpan={9} className="orders-empty">
+                  <td colSpan={11} className="orders-empty">
                     <strong>No Orders Found</strong>
                     <small>There are no matching active orders.</small>
                   </td>
@@ -189,7 +195,25 @@ export default function AdminOrdersPage() {
                     <td>{order.customer?.phone || "—"}</td>
                     <td>{order.customer?.city || "—"}</td>
                     <td>{order.orderDate || "—"}</td>
-                    <td>{money(Number(order.total) || 0)}</td>
+                    <td>
+                      {order.couponCode ? (
+                        <strong className="orders-coupon-code">
+                          {order.couponCode}
+                        </strong>
+                      ) : (
+                        "—"
+                      )}
+                    </td>
+                    <td>
+                      {Number(order.discount) > 0
+                        ? money(Number(order.discount))
+                        : "—"}
+                    </td>
+                    <td>
+                      <strong>
+                        {money(Number(order.total) || 0)}
+                      </strong>
+                    </td>
                     <td>{order.paymentMethod || "—"}</td>
                     <td>
                       <span className="orders-status">
